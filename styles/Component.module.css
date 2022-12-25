@@ -1,0 +1,222 @@
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.row {
+  width: 100%;
+}
+
+.windowFill {
+  width: 100%;
+  min-height: 100vh;
+  overflow: auto;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spaceBet {
+  justify-content: space-between;
+}
+
+.alignStart {
+  align-items: flex-start;
+}
+
+.justifyStart {
+  justify-content: flex-start;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 5px 8px;
+}
+
+.container {
+  border: 8px;
+  padding: 20px 15px;
+  background: var(--dark);
+  box-shadow: 0 0 1px white;
+}
+
+.fadeInBottom {
+  animation: fade-bottom 0.7s ease-in forwards;
+}
+
+.fadeIn {
+  animation: fade-in 0.5s ease forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.alignStart {
+  align-items: flex-start;
+}
+
+.justifyStart {
+  justify-content: flex-start;
+}
+
+.hoverPopUpAnchor {
+  position: relative;
+}
+
+.hoverPopUp {
+  position: absolute;
+  bottom: -75%;
+  padding: 5px 8px;
+  border-radius: 6px;
+  width: fit-content;
+  z-index: 30;
+}
+
+.hoverPopUp::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  top: -5px;
+  background-color: currentColor;
+  transform: rotateZ(45deg);
+  z-index: 29;
+}
+
+.hoverPopUp,
+.hoverPopUp::before {
+  opacity: 0;
+}
+
+.hoverPopUpAnchor:hover .hoverPopUp,
+.hoverPopUpAnchor:hover .hoverPopUp::before {
+  opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .hoverPopUp {
+    display: none;
+  }
+}
+
+.inputContainer {
+  padding: 0 15px;
+  margin: 10px 0;
+  position: relative;
+  justify-content: flex-start !important;
+}
+
+.dataInput,
+.dataArea {
+  padding: 10px 14px;
+  z-index: 10;
+  color: white;
+  background-color: transparent;
+  border: 2px solid wheat;
+  border-radius: 3px;
+  width: 100%;
+  height: max-content;
+}
+
+.dataArea ~ .dataInputName {
+  top: 10px;
+}
+
+.dataInput:focus,
+.dataArea:focus {
+  border-color: aquamarine;
+}
+
+.dataInputName {
+  position: absolute;
+  color: wheat;
+  margin-left: 15px;
+  z-index: 9;
+  background-color: black;
+}
+
+.dataInput:disabled ~ .dataInputName,
+.dataArea:disabled ~ .dataInputName {
+  background-color: transparent;
+}
+
+.dataArea:focus ~ .dataInputName,
+.dataArea:not([data-value=""]) ~ .dataInputName {
+  top: -8px;
+}
+
+.dataArea:focus ~ .dataInputName,
+.dataInput:focus ~ .dataInputName,
+.dataArea:not([data-value=""]) ~ .dataInputName,
+.dataInput:not([data-value=""]) ~ .dataInputName {
+  padding: 0 8px;
+}
+
+.dataArea:focus ~ .dataInputName,
+.dataInput:focus ~ .dataInputName,
+.dataArea:not([data-value=""]) ~ .dataInputName,
+.dataInput:not([data-value=""]) ~ .dataInputName,
+.dataInput[data-value=""]:disabled ~ .dataInputName,
+.dataArea[data-value=""]:disabled ~ .dataInputName {
+  z-index: 11;
+}
+
+.dataInput:focus ~ .dataInputName,
+.dataInput:not([data-value=""]) ~ .dataInputName {
+  transform: translateY(-120%);
+}
+
+.dataInput:focus ~ .dataInputName,
+.dataArea:focus ~ .dataInputName {
+  color: aquamarine;
+}
+
+.dataInput:not([data-value=""]):invalid {
+  border-color: red;
+}
+
+.dataInput:not([data-value=""]):invalid ~ .dataInputName {
+  color: red;
+}
+@media screen and (max-width: 600px) {
+  .rowInput {
+    flex-direction: column;
+  }
+
+  .inputContainer {
+    width: 100%;
+  }
+}
+
+.dataInput:disabled,
+.dataArea:disabled {
+  background-color: var(--dark-highlight);
+}
