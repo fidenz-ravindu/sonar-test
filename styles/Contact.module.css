@@ -1,0 +1,31 @@
+.messageForm {
+  padding: 15px;
+  margin: 20px;
+  background-color: black;
+}
+
+@media screen and (max-width: 600px) {
+  .messageForm {
+    padding: 15px 0;
+  }
+}
+
+.btn {
+  padding: 8px 15px;
+  color: white;
+  background-color: var(--v-dr);
+  float: right;
+  margin: 0 15px;
+}
+
+.btn:disabled {
+  background-color: var(--dark-highlight);
+}
+
+.btn:hover {
+  box-shadow: 0 0 3px red;
+}
+
+.status {
+  font-size: 1.1rem;
+}
