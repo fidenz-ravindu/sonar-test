@@ -63,6 +63,14 @@
   background-color: var(--dark);
 }
 
+.elementIcon {
+  font-size: 1.6rem;
+  margin: 0 5px;
+  width: fit-content;
+  height: fit-content;
+  filter: drop-shadow(0 0 6px black);
+}
+
 .link {
   padding: 10px;
   height: 45px;
@@ -103,4 +111,35 @@
 .iconContainer .icon {
   height: 100%;
   width: 100%;
+}
+
+@media screen and (max-width: 450px) {
+  .contentTitle {
+    font-size: 1rem;
+  }
+
+  .content {
+    font-size: 0.7rem;
+  }
+
+  .arrayContainer .content {
+    grid-template-columns: repeat(auto-fill, minmax(100px, max-content));
+  }
+
+  .arrayElement {
+    font-size: 0.6rem;
+    padding: 5px;
+  }
+
+  .elementIcon {
+    font-size: 0.9rem;
+  }
+
+  .slugContent {
+    grid-template-columns: repeat(auto-fill, minmax(60px, max-content));
+  }
+
+  .iconContainer {
+    height: 60px;
+  }
 }

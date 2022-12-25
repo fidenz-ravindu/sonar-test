@@ -73,7 +73,7 @@ class DetailsComponent extends Component {
                                             {elm.content.map(element => {
                                                 return <div className={[ComponentStyles.row, ComponentStyles.center].join(" ")} key={element.icon}>
                                                     <div className={[Styles.arrayElement, ComponentStyles.center].join(" ")}>
-                                                        <span className={[MaterialIcons.className].join(" ")} style={{ fontSize: "1.6rem", margin: "0 5px", width: "fit-content", height: "fit-content", color: `rgb(${225 * Math.random()}, ${225 * Math.random()}, ${225 * Math.random()})`, filter: "drop-shadow(0 0 6px black)" }}>{element.icon}</span>
+                                                        <span className={[MaterialIcons.className, Styles.elementIcon].join(" ")} style={{ color: `rgb(${225 * Math.random()}, ${225 * Math.random()}, ${225 * Math.random()})` }}>{element.icon}</span>
                                                         <span className={Lato.className} style={{ margin: "5px" }}>{element.content}</span>
                                                     </div>
                                                 </div>
