@@ -3,6 +3,9 @@ import LocalFont from "@next/font/local";
 export const AltonaSans = LocalFont({
   src: "./fonts/altona_sans/AltonaSans-Regular.ttf",
 });
+export const Atma = LocalFont({
+  src: "./fonts/atma/Atma-Regular.ttf",
+});
 export const Barlow = LocalFont({
   src: "./fonts/Barlow/Barlow-Regular.ttf",
 });
