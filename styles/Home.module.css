@@ -3,21 +3,6 @@
   color: white;
 }
 
-.commandCursor {
-  animation: command-animation 1s ease infinite;
-}
-
-@keyframes command-animation {
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-  }
-}
-
 .separator {
   width: 90%;
   height: 3px;

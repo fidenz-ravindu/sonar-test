@@ -226,3 +226,16 @@
     font-size: 0.7rem;
   }
 }
+.blink {
+  animation: blink-animation 1s ease infinite;
+}
+@keyframes blink-animation {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}

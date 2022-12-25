@@ -41,10 +41,32 @@ const getDetails = async (callback, onprogress) => {
   );
 };
 
-const sendMessage = async(body, callback, onprogress) => {
-  return await request(API_ROUTES.MESSAGES, {}, "post", body, {
-    "Content-Type": "application/json",
-  }, callback, onprogress);
-}
+const sendMessage = async (body, callback, onprogress) => {
+  return await request(
+    API_ROUTES.MESSAGES,
+    {},
+    "post",
+    body,
+    {
+      "Content-Type": "application/json",
+    },
+    callback,
+    onprogress
+  );
+};
 
-export { getDetails, sendMessage };
+const getWork = async (callback, onprogress) => {
+  return await request(
+    API_ROUTES.WORK,
+    {},
+    "post",
+    {},
+    {
+      "Content-Type": "application/json",
+    },
+    callback,
+    onprogress
+  );
+};
+
+export { getDetails, sendMessage, getWork };
