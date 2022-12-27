@@ -34,5 +34,7 @@
 }
 
 .date {
+  padding: 5px 15px;
+  border-bottom: 2px solid brown;
   font-size: 0.75rem;
 }
