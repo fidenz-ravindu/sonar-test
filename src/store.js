@@ -7,18 +7,28 @@ const slice = createSlice({
     projects: [],
     people: [],
     archivements: [],
-    feed: [],
+    posts: {},
     gallery: [],
     work: [],
     waiting: false,
+    feedPage: 1,
   },
   reducers: {
     set: (state, { type, payload }) => {
       state[payload.key] = payload.value;
     },
+    setPosts: (state, { type, payload }) => {
+      let t = (payload.page - 1) * 6,
+        i = 0;
+      state.posts[payload.page] = payload.posts.map((elm) => {
+        elm["key"] = t + i++;
+        return elm;
+      });
+      state.feedPage = payload.page + 1;
+    },
   },
 });
 
-export const { set } = slice.actions;
+export const { set, setPosts } = slice.actions;
 
 export const store = configureStore({ reducer: slice.reducer });

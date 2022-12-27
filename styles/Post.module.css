@@ -1,0 +1,38 @@
+.postContainer {
+  padding: 15px;
+  margin: 15px;
+  background-color: var(--dark);
+  border: 1px solid var(--dark-highlight-visible-content);
+  border-radius: 3px;
+  opacity: 0;
+}
+
+.container {
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: var(--dark-highlight-visible);
+}
+
+.postTitle,
+.date {
+  color: white;
+}
+
+.tag {
+  cursor: pointer;
+  color: wheat;
+  font-size: 0.7rem;
+  border-radius: 4px;
+}
+
+.content {
+  font-size: 0.8rem;
+  margin: 6px;
+  padding: 10px 15px;
+  color: whitesmoke;
+  background-color: var(--dark-highlight-visible-content);
+}
+
+.date {
+  font-size: 0.75rem;
+}

@@ -69,4 +69,18 @@ const getWork = async (callback, onprogress) => {
   );
 };
 
-export { getDetails, sendMessage, getWork };
+const getPosts = async (params, callback, onprogress) => {
+  return await request(
+    API_ROUTES.POSTS,
+    params,
+    "post",
+    {},
+    {
+      "Content-Type": "application/json",
+    },
+    callback,
+    onprogress
+  );
+};
+
+export { getDetails, sendMessage, getWork, getPosts };
