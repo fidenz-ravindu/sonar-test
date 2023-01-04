@@ -1,4 +1,5 @@
 import MessageModel from "../../src/models/message";
+import { getConnection } from "../../src/mongo";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
