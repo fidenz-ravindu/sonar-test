@@ -25,6 +25,7 @@
   border: 3px solid var(--content-border);
   box-shadow: 0 0 10px var(--content-border);
   max-width: 500px;
+  width: 90%;
 }
 
 .section {
