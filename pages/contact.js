@@ -1,14 +1,14 @@
 import Head from "next/head";
 import { Component } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getDetails, sendMessage } from "../src/api/request";
+import { get_details, send_message } from "../src/api/request";
 import Details from "../src/components/Details";
 import Input from "../src/components/Input";
 import { set } from "../src/store";
 
-import HomeStyles from '../styles/Home.module.css'
-import ComponentStyles from '../styles/Component.module.css'
-import Styles from '../styles/Contact.module.css'
+import HomeStyles from "../styles/Home.module.css";
+import ComponentStyles from "../styles/Component.module.css";
+import Styles from "../styles/Contact.module.css";
 import { AltonaSans, Lato, MaterialIcons, Quicksand } from "../src/font";
 
 export default function ContactMe(props) {
@@ -24,7 +24,7 @@ export default function ContactMe(props) {
           })
         );
       })}
-      isWaiting={useSelector(state => state.waiting)}
+      isWaiting={useSelector((state) => state.waiting)}
     />
   );
 }
@@ -34,14 +34,14 @@ class ContactMeComponent extends Component {
     super(props);
 
     this.state = {
-      output: 0
-    }
+      output: 0,
+    };
   }
 
   async sendMessage(e) {
     this.setState({ output: 0 });
     const { dispatch } = this.props;
-    dispatch(set({ key: "waiting", value: true }))
+    dispatch(set({ key: "waiting", value: true }));
 
     let body = {};
     const elms = e.target.elements;
@@ -49,27 +49,27 @@ class ContactMeComponent extends Component {
       body[elms[i].name] = elms[i].value;
     }
 
-    await sendMessage(body, (res) => {
+    await send_message(body, (res) => {
       if (res.code === 200) {
         this.setState({ output: 1 });
       } else {
         this.setState({ output: 2 });
       }
     });
-    dispatch(set({ key: "waiting", value: false }))
+    dispatch(set({ key: "waiting", value: false }));
   }
 
   componentDidMount() {
-    this.getInfo()
+    this.getInfo();
   }
 
   async getInfo() {
     const { dispatch } = this.props;
-    dispatch(set({ key: "waiting", value: true }))
-    await getDetails((e) => {
-      dispatch(set({ key: "details", value: e.details }))
+    dispatch(set({ key: "waiting", value: true }));
+    await get_details((e) => {
+      dispatch(set({ key: "details", value: e.details }));
     });
-    dispatch(set({ key: "waiting", value: false }))
+    dispatch(set({ key: "waiting", value: false }));
   }
 
   render() {
@@ -83,33 +83,158 @@ class ContactMeComponent extends Component {
         </Head>
 
         <section>
-          <Details data={this.props.details ? [this.props.details] : []} className={[HomeStyles.container, HomeStyles.detailsContainer].join(" ")} style={{ margin: "16px 8px", borderRadius: "8px" }} />
-          <form onSubmit={(e) => {
-            e.preventDefault();
-            this.sendMessage(e);
-          }} className={[ComponentStyles.center, ComponentStyles.column, Styles.messageForm].join(" ")}>
-            <div className={Lato.className} style={{ alignSelf: "baseline", width: "fit-content", color: "red", fontSize: "1.2rem", margin: "6px 0 6px 35px " }}>
+          <Details
+            data={this.props.details ? [this.props.details] : []}
+            className={[HomeStyles.container, HomeStyles.detailsContainer].join(
+              " "
+            )}
+            style={{ margin: "16px 8px", borderRadius: "8px" }}
+          />
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              this.sendMessage(e);
+            }}
+            className={[
+              ComponentStyles.center,
+              ComponentStyles.column,
+              Styles.messageForm,
+            ].join(" ")}
+          >
+            <div
+              className={Lato.className}
+              style={{
+                alignSelf: "baseline",
+                width: "fit-content",
+                color: "red",
+                fontSize: "1.2rem",
+                margin: "6px 0 6px 35px ",
+              }}
+            >
               Leave a message
             </div>
-            <div className={[ComponentStyles.center, ComponentStyles.row, ComponentStyles.rowInput].join(" ")}>
-              <div className={[ComponentStyles.row, ComponentStyles.inputContainer, ComponentStyles.center].join(" ")}>
-                <Input disabled={isWaiting} className={[ComponentStyles.dataInput, Quicksand.className].join(" ")} required spellCheck="false" autoComplete="off" type="text" name="name" />
-                <div className={[ComponentStyles.dataInputName, AltonaSans.className].join(" ")}>Name</div>
+            <div
+              className={[
+                ComponentStyles.center,
+                ComponentStyles.row,
+                ComponentStyles.rowInput,
+              ].join(" ")}
+            >
+              <div
+                className={[
+                  ComponentStyles.row,
+                  ComponentStyles.inputContainer,
+                  ComponentStyles.center,
+                ].join(" ")}
+              >
+                <Input
+                  disabled={isWaiting}
+                  className={[
+                    ComponentStyles.dataInput,
+                    Quicksand.className,
+                  ].join(" ")}
+                  required
+                  spellCheck="false"
+                  autoComplete="off"
+                  type="text"
+                  name="name"
+                />
+                <div
+                  className={[
+                    ComponentStyles.dataInputName,
+                    AltonaSans.className,
+                  ].join(" ")}
+                >
+                  Name
+                </div>
               </div>
-              <div className={[ComponentStyles.row, ComponentStyles.inputContainer, ComponentStyles.center].join(" ")}>
-                <Input disabled={isWaiting} className={[ComponentStyles.dataInput, Quicksand.className].join(" ")} required spellCheck="false" autoComplete="off" type="email" name="email" />
-                <div className={[ComponentStyles.dataInputName, AltonaSans.className].join(" ")}>Email</div>
+              <div
+                className={[
+                  ComponentStyles.row,
+                  ComponentStyles.inputContainer,
+                  ComponentStyles.center,
+                ].join(" ")}
+              >
+                <Input
+                  disabled={isWaiting}
+                  className={[
+                    ComponentStyles.dataInput,
+                    Quicksand.className,
+                  ].join(" ")}
+                  required
+                  spellCheck="false"
+                  autoComplete="off"
+                  type="email"
+                  name="email"
+                />
+                <div
+                  className={[
+                    ComponentStyles.dataInputName,
+                    AltonaSans.className,
+                  ].join(" ")}
+                >
+                  Email
+                </div>
               </div>
             </div>
-            <div className={[ComponentStyles.row, ComponentStyles.inputContainer, ComponentStyles.center].join(" ")}>
-              <Input disabled={isWaiting} className={[ComponentStyles.dataInput, Quicksand.className].join(" ")} required spellCheck="false" autoComplete="off" type="text" name="subject" />
-              <div className={[ComponentStyles.dataInputName, AltonaSans.className].join(" ")}>Subject</div>
+            <div
+              className={[
+                ComponentStyles.row,
+                ComponentStyles.inputContainer,
+                ComponentStyles.center,
+              ].join(" ")}
+            >
+              <Input
+                disabled={isWaiting}
+                className={[
+                  ComponentStyles.dataInput,
+                  Quicksand.className,
+                ].join(" ")}
+                required
+                spellCheck="false"
+                autoComplete="off"
+                type="text"
+                name="subject"
+              />
+              <div
+                className={[
+                  ComponentStyles.dataInputName,
+                  AltonaSans.className,
+                ].join(" ")}
+              >
+                Subject
+              </div>
             </div>
-            <div className={[ComponentStyles.row, ComponentStyles.inputContainer, ComponentStyles.center].join(" ")}>
-              <textarea {...{ "data-value": "" }} disabled={isWaiting} className={[ComponentStyles.dataArea, Quicksand.className].join(" ")} required spellCheck="false" autoComplete="off" type="text" name="message"
+            <div
+              className={[
+                ComponentStyles.row,
+                ComponentStyles.inputContainer,
+                ComponentStyles.center,
+              ].join(" ")}
+            >
+              <textarea
+                {...{ "data-value": "" }}
+                disabled={isWaiting}
+                className={[ComponentStyles.dataArea, Quicksand.className].join(
+                  " "
+                )}
+                required
+                spellCheck="false"
+                autoComplete="off"
+                type="text"
+                name="message"
                 onKeyDown={(e) => {
-                  if (e.key === 'Enter' && e.target.clientHeight < e.target.scrollHeight) {
-                    e.target.setAttribute("rows", Math.max(parseInt(e.target.getAttribute("rows") || 1) + 2, 2))
+                  if (
+                    e.key === "Enter" &&
+                    e.target.clientHeight < e.target.scrollHeight
+                  ) {
+                    e.target.setAttribute(
+                      "rows",
+                      Math.max(
+                        parseInt(e.target.getAttribute("rows") || 1) + 2,
+                        2
+                      )
+                    );
                   }
                 }}
                 onBlur={(e) => {
@@ -118,12 +243,42 @@ class ContactMeComponent extends Component {
                   } else {
                     e.target.setAttribute("data-value", "");
                   }
-                }} />
-              <div className={[ComponentStyles.dataInputName, AltonaSans.className].join(" ")}>Message</div>
+                }}
+              />
+              <div
+                className={[
+                  ComponentStyles.dataInputName,
+                  AltonaSans.className,
+                ].join(" ")}
+              >
+                Message
+              </div>
             </div>
-            <div className={[ComponentStyles.row, ComponentStyles.inputContainer].join(" ")}>
-              <span className={[MaterialIcons.className, Styles.status].join(" ")} style={{ padding: "5px", borderRadius: "50%", border: "1px solid", color: (output == 1 ? "green" : (output === 2 ? "red" : "transparent")) }}>{(output == 1 ? "done" : (output === 2 ? "error" : ""))}</span>
-              <button disabled={isWaiting} className={Styles.btn} type="submit" >Send</button>
+            <div
+              className={[
+                ComponentStyles.row,
+                ComponentStyles.inputContainer,
+              ].join(" ")}
+            >
+              <span
+                className={[MaterialIcons.className, Styles.status].join(" ")}
+                style={{
+                  padding: "5px",
+                  borderRadius: "50%",
+                  border: "1px solid",
+                  color:
+                    output == 1
+                      ? "green"
+                      : output === 2
+                      ? "red"
+                      : "transparent",
+                }}
+              >
+                {output == 1 ? "done" : output === 2 ? "error" : ""}
+              </span>
+              <button disabled={isWaiting} className={Styles.btn} type="submit">
+                Send
+              </button>
             </div>
           </form>
         </section>

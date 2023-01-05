@@ -18,7 +18,7 @@ import {
   Roboto,
   SourceSansPro,
 } from "../src/font";
-import { getDetails } from "../src/api/request";
+import { get_details } from "../src/api/request";
 import Details from "../src/components/Details";
 import { Provider, useDispatch, useSelector } from "react-redux";
 import { set, store } from "../src/store";
@@ -112,7 +112,7 @@ class HomeComponent extends Component {
         func: async () => {
           const { dispatch } = this.props;
           dispatch(set({ key: "waiting", value: true }));
-          await getDetails((e) => {
+          await get_details((e) => {
             dispatch(set({ key: "details", value: e.details }));
           });
           dispatch(set({ key: "waiting", value: false }));

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Component } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPosts } from "../../src/api/request";
+import { get_posts } from "../../src/api/request";
 import Post from "../../src/components/Post";
 import { Atma } from "../../src/font";
 import { set, setPosts } from "../../src/store";
@@ -32,7 +32,7 @@ class FeedComponent extends Component {
   async getPosts() {
     const { dispatch, data } = this.props;
     dispatch(set({ key: "waiting", value: true }));
-    await getPosts({ page: data.page, limit: 6 }, (res) => {
+    await get_posts({ page: data.page, limit: 6 }, (res) => {
       if (res.posts.length > 0) {
         dispatch(setPosts({ page: data.page, posts: res.posts }));
       }

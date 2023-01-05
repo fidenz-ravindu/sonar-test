@@ -29,7 +29,7 @@ const request = (url, params, method, body, headers, callback, onprogress) => {
   return promise;
 };
 
-const getDetails = async (callback, onprogress) => {
+const get_details = async (callback, onprogress) => {
   return await request(
     API_ROUTES.DETAILS,
     {},
@@ -41,7 +41,7 @@ const getDetails = async (callback, onprogress) => {
   );
 };
 
-const sendMessage = async (body, callback, onprogress) => {
+const send_message = async (body, callback, onprogress) => {
   return await request(
     API_ROUTES.MESSAGES,
     {},
@@ -55,7 +55,7 @@ const sendMessage = async (body, callback, onprogress) => {
   );
 };
 
-const getWork = async (callback, onprogress) => {
+const get_work = async (callback, onprogress) => {
   return await request(
     API_ROUTES.WORK,
     {},
@@ -69,7 +69,7 @@ const getWork = async (callback, onprogress) => {
   );
 };
 
-const getPosts = async (params, callback, onprogress) => {
+const get_posts = async (params, callback, onprogress) => {
   return await request(
     API_ROUTES.POSTS,
     params,
@@ -83,7 +83,7 @@ const getPosts = async (params, callback, onprogress) => {
   );
 };
 
-const getProjects = async (callback, onprogress) => {
+const get_projects = async (callback, onprogress) => {
   return await request(
     API_ROUTES.PROJECTS,
     {},
@@ -97,4 +97,4 @@ const getProjects = async (callback, onprogress) => {
   );
 };
 
-export { getDetails, sendMessage, getWork, getPosts, getProjects };
+export { get_details, send_message, get_work, get_posts, get_projects };
