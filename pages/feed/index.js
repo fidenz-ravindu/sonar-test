@@ -54,7 +54,7 @@ class FeedComponent extends Component {
 
         <main
           className={ComponentStyles.page}
-          style={{ height: "fit-content", overflow: "auto" }}
+          style={{ maxHeight: "100vh", overflow: "auto" }}
           onScroll={(e) => {
             if (
               e.target.scrollTop + e.target.clientHeight ===
@@ -78,7 +78,9 @@ class FeedComponent extends Component {
                 type={2}
                 key={element.key}
                 post={element}
-                style={{ animationDelay: `${element.key * 0.2}s` }}
+                style={{
+                  animationDelay: `${(element.key - element.t) * 0.2}s`,
+                }}
               />
             ));
           })}

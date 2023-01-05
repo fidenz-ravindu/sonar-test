@@ -83,3 +83,12 @@ ul {
   --v-dr: rgb(141, 13, 13);
   --v-dg: rgb(0, 180, 45);
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -22,6 +22,7 @@ const slice = createSlice({
         i = 0;
       state.posts[payload.page] = payload.posts.map((elm) => {
         elm["key"] = t + i++;
+        elm["t"] = t;
         return elm;
       });
       state.feedPage = payload.page + 1;
