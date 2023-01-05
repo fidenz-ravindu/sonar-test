@@ -97,4 +97,55 @@ const get_projects = async (callback, onprogress) => {
   );
 };
 
-export { get_details, send_message, get_work, get_posts, get_projects };
+const get_gallery_media = async (callback, onprogress) => {
+  return await request(
+    API_ROUTES.GALLERY,
+    {},
+    "post",
+    {},
+    {
+      "Content-Type": "application/json",
+    },
+    callback,
+    onprogress
+  );
+};
+
+const get_archievements = async (callback, onprogress) => {
+  return await request(
+    API_ROUTES.ARCHIEVEMENTS,
+    {},
+    "post",
+    {},
+    {
+      "Content-Type": "application/json",
+    },
+    callback,
+    onprogress
+  );
+};
+
+const get_people = async (callback, onprogress) => {
+  return await request(
+    API_ROUTES.PEOPLE,
+    {},
+    "post",
+    {},
+    {
+      "Content-Type": "application/json",
+    },
+    callback,
+    onprogress
+  );
+};
+
+export {
+  get_details,
+  send_message,
+  get_work,
+  get_posts,
+  get_projects,
+  get_gallery_media,
+  get_archievements,
+  get_people,
+};
