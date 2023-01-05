@@ -155,11 +155,11 @@ export default class Post extends Component {
                   {time}
                 </div>
               </div>
-              {post.type === "Image" && post.link && (
-                <div className={[Styles.content, Poppins.className].join(" ")}>
-                  <div style={{ marginBottom: "15px", padding: "10px" }}>
-                    {post.content}
-                  </div>
+              <div className={[Styles.content, Poppins.className].join(" ")}>
+                <div style={{ marginBottom: "15px", padding: "10px" }}>
+                  {post.content}
+                </div>
+                {post.type === "Image" && post.link && (
                   <div>
                     {
                       <img
@@ -169,8 +169,8 @@ export default class Post extends Component {
                       />
                     }
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           </>
         );
