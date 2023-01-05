@@ -13,6 +13,7 @@ export default class Project extends Component {
       "February",
       "March",
       "April",
+      "May",
       "June",
       "July",
       "August",

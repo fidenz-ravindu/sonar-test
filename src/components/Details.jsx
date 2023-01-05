@@ -34,6 +34,7 @@ class DetailsComponent extends Component {
       "February",
       "March",
       "April",
+      "May",
       "June",
       "July",
       "August",
