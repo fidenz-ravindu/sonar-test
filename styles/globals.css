@@ -75,6 +75,8 @@ ul {
   --dark-highlight: #131313;
   --dark-highlight-visible: #030303;
   --dark-highlight-visible-content: #333;
+  --content-highlight: rgb(33, 35, 46);
+  --content-border: rgb(78, 209, 181);
   --light: #befdff;
   --dark-blue: rgb(9, 0, 58);
   --v-dv: rgb(170, 5, 143);

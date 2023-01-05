@@ -5,4 +5,5 @@ export const API_ROUTES = {
   MESSAGES: API + "/message",
   WORK: API + "/work",
   POSTS: API + "/posts",
+  PROJECTS: API + "/projects",
 };

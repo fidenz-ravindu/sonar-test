@@ -1,0 +1,93 @@
+.projectContainer {
+  width: 100%;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(1%, 500px));
+}
+
+.bg {
+  position: absolute;
+  filter: blur(16px);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+  z-index: 500;
+}
+
+.container {
+  padding: 15px 20px;
+  margin: 25px;
+  color: white;
+  background-color: var(--dark-highlight);
+  border-radius: 8px;
+  border: 3px solid var(--content-border);
+  box-shadow: 0 0 10px var(--content-border);
+  max-width: 500px;
+}
+
+.section {
+  margin: 10px;
+}
+
+.logo {
+  margin: 15px;
+  width: 50px;
+  min-width: 50px;
+  height: 50px;
+  min-height: 50px;
+}
+
+.logo .img {
+  width: 100%;
+}
+
+.loading {
+  background: linear-gradient(60deg, black, var(--content-highlight), black);
+  background-size: 200% 200%;
+  animation: loading-animation 3s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+.source {
+  width: fit-content;
+  padding: 5px 16px;
+  border-radius: 16px;
+  background-color: black;
+  cursor: pointer;
+}
+
+.source:hover {
+  background-color: var(--dark);
+}
+
+.link {
+  border-radius: 50%;
+  padding: 5px;
+  font-weight: 600;
+  color: wheat;
+}
+
+.link:hover {
+  color: black;
+  background-color: wheat;
+}
+
+@keyframes loading-animation {
+  0%,
+  100% {
+    background-position: 0;
+  }
+
+  50% {
+    background-position: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .link {
+    color: black;
+    background-color: wheat;
+  }
+}
