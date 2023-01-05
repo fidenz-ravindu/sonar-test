@@ -112,7 +112,7 @@
   width: 100%;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 480px) {
   .contentTitle {
     font-size: 1rem;
   }
