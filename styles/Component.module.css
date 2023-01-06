@@ -2,6 +2,11 @@
   position: absolute;
 }
 
+.page {
+  width: 100%;
+  height: calc(100vh - var(--navbar-height));
+}
+
 .relative {
   position: relative;
 }
@@ -242,5 +247,11 @@
 
   50% {
     opacity: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .page {
+    height: 100vh;
   }
 }
