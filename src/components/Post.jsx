@@ -100,6 +100,8 @@ export default class Post extends Component {
           posted = new Date(post.posted);
         if (now.getTime() - 1000 * 60 * 60 * 24 < posted.getTime()) {
           time = `${posted.getHours()}:${posted.getMinutes()}`;
+          now.setHours(0, 0, 0, 0);
+          if (now.getTime() > posted.getTime()) time = "Yesterday";
         } else if (now.getFullYear() === posted.getFullYear()) {
           time = `${this.months[posted.getMonth()]} ${posted.getDate()}`;
         } else {
