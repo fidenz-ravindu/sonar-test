@@ -53,7 +53,6 @@ class FeedComponent extends Component {
         </Head>
 
         <main
-          className={ComponentStyles.page}
           style={{ maxHeight: "100vh", overflow: "auto" }}
           onScroll={(e) => {
             if (
