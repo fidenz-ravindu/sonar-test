@@ -169,7 +169,7 @@ class HomeComponent extends Component {
         </Head>
 
         <section
-          className={[ComponentStyles.page, ComponentStyles.center].join(" ")}
+          className={[ComponentStyles.center].join(" ")}
           style={{ margin: "20px" }}
         >
           <div
