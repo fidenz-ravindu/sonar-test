@@ -64,7 +64,6 @@ class ProjectsComponent extends Component {
         <section
           className={[
             Styles.page,
-            ComponentStyles.page,
             ComponentStyles.center,
             ComponentStyles.column,
           ].join(" ")}
