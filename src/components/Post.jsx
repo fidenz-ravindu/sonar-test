@@ -155,7 +155,9 @@ export default class Post extends Component {
                 </div>
               </div>
               <div className={[Styles.content, Poppins.className].join(" ")}>
-                <div style={{ padding: "10px" }}>{post.content}</div>
+                <div className={Styles.message} style={{ padding: "10px" }}>
+                  {post.content}
+                </div>
                 {post.type === "Image" && post.link && (
                   <div className={Styles.image}>
                     {

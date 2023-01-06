@@ -22,6 +22,7 @@
   border-radius: 4px;
   background-color: black;
   box-shadow: 0 0 2px wheat;
+  white-space: pre-wrap;
 }
 
 .arrayContainer .content {
