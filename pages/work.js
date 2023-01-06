@@ -76,11 +76,7 @@ class WorkComponent extends Component {
         </Head>
 
         <section
-          className={[
-            ComponentStyles.page,
-            ComponentStyles.center,
-            ComponentStyles.column,
-          ].join(" ")}
+          className={[ComponentStyles.center, ComponentStyles.column].join(" ")}
           style={{ margin: "20px" }}
         >
           <div
