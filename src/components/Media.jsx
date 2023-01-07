@@ -61,8 +61,8 @@ export default class Media extends Component {
 
     swipeMove(e) {
         const { id, active, swipe } = this.props, { x } = this.state;
-        console.log(e)
         if (id === active && x >= 0) {
+            console.log(e.touches[0].pageX, x)
             swipe(e.touches && e.touches.length > 0 ? e.touches[0].pageX - x : e.pageX - x);
         }
     }
@@ -81,7 +81,7 @@ export default class Media extends Component {
                     this.setState({ x: e.screenX })
                 }}
                 onTouchStart={(e) => {
-                    this.setState({ x: e.touches[0].screenX })
+                    this.setState({ x: e.touches[0].pageX })
                 }}
                 onMouseMove={(e) => {
                     this.swipeMove(e);
@@ -96,15 +96,12 @@ export default class Media extends Component {
                 className={[Styles.media, ComponentStyles.center, ComponentStyles.relative, className].join(" ")}
                 style={{ scale: (activeElement ? '1' : '0.8'), filter: (activeElement ? "none" : "blur(4px)"), ...style }}>
                 <div className={[Styles.mediaContentContainer, ComponentStyles.center].join(" ")} onLoad={(e) => {
-                    const containers = e.target.parentNode.parentNode.parentNode.children;
-                    for (let i = 0; i < containers.length; i++) {
-                        const children = containers[i].children[0].children;
+                    const children = e.target.parentNode.children;
 
-                        children[1].style.width = `${children[0].clientWidth}px`;
-                        children[1].style.height = `${children[0].clientHeight}px`;
+                    children[1].style.width = `${children[0].clientWidth}px`;
+                    children[1].style.height = `${children[0].clientHeight}px`;
 
-                        e.target.parentNode.parentNode.style.opacity = '1';
-                    }
+                    e.target.parentNode.parentNode.style.opacity = '1';
                 }}
                 >
                     {post.type === "Image" && <img draggable={false} className={Styles.mediaContent} src={post.link} alt="Image of post" />}
