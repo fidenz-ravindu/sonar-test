@@ -61,8 +61,13 @@ class GalleryComponent extends Component {
     this.getMedia();
   }
 
-  setActiveMedia(key) {
+  setActiveMedia(key, e) {
     this.setState({ active: key });
+
+    if (e) {
+      console.log(e.parentNode)
+      this.scrollTo(e.parentNode.children[key]);
+    }
   }
 
   scrollTo(e) {
@@ -117,9 +122,7 @@ class GalleryComponent extends Component {
                     active={active}
                     id={elm.key}
                     len={media.length}
-                    setActive={(key) => {
-                      this.setActiveMedia(key);
-                    }}
+                    setActive={this.setActiveMedia}
                     scroll={this.scrollTo}
                     scrollLen={this.scroll}
                     swipe={this.swipe}

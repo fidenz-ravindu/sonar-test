@@ -41,18 +41,16 @@ export default class Media extends Component {
 
         if (x > 0) {
             if (x === e.pageX) {
-                scroll(e.target.parentNode.parentNode);
-                setActive(id);
+                setActive(id, e.target.parentNode.parentNode);
             } else
                 if (Math.abs(x - e.pageX) >= e.target.clientWidth / 2) {
                     console.log(e.pageX, x);
                     if (id < len - 1 && x > e.pageX) {
-                        scroll(e.target.parentNode.parentNode.parentNode.children[id + 1]);
-                        setActive(id + 1);
+                        setActive(id + 1, e.target.parentNode.parentNode);
                     }
                     else if (id > 0 && x < e.pageX) {
-                        scroll(e.target.parentNode.parentNode.parentNode.children[id - 1]);
-                        setActive(id - 1);
+                        // scroll(e.target.parentNode.parentNode.parentNode.children[id - 1]);
+                        setActive(id - 1, e.target.parentNode.parentNode);
                     }
                 }
             this.setState({ x: -1 })
