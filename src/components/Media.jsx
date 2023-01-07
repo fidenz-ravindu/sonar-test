@@ -45,11 +45,12 @@ export default class Media extends Component {
                 setActive(id);
             } else
                 if (Math.abs(x - e.pageX) >= e.target.clientWidth / 2) {
+                    console.log(e.pageX, x);
                     if (id < len - 1 && x > e.pageX) {
                         scroll(e.target.parentNode.parentNode.parentNode.children[id + 1]);
                         setActive(id + 1);
                     }
-                    else if (id > 0) {
+                    else if (id > 0 && x < e.pageX) {
                         scroll(e.target.parentNode.parentNode.parentNode.children[id - 1]);
                         setActive(id - 1);
                     }
