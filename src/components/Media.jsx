@@ -33,6 +33,12 @@ export default class Media extends Component {
     swipeEnd(e) {
         const { x } = this.state, { scrollLen, setActive, swipe, id, len, scroll } = this.props;
 
+        if (e.touches && e.touches.length > 0) {
+            e.pageX = e.touches[0].pageX;
+        } else if (e.changedTouches && e.changedTouches.length > 0) {
+            e.pageX = e.changedTouches[0].pageX;
+        }
+
         if (x > 0) {
             if (x === e.pageX) {
                 scroll(e.target.parentNode.parentNode);
@@ -55,8 +61,9 @@ export default class Media extends Component {
 
     swipeMove(e) {
         const { id, active, swipe } = this.props, { x } = this.state;
+        console.log(e)
         if (id === active && x >= 0) {
-            swipe(e.pageX - x);
+            swipe(e.touches && e.touches.length > 0 ? e.touches[0].pageX - x : e.pageX - x);
         }
     }
 
@@ -74,7 +81,7 @@ export default class Media extends Component {
                     this.setState({ x: e.screenX })
                 }}
                 onTouchStart={(e) => {
-                    this.setState({ x: e.screenX })
+                    this.setState({ x: e.touches[0].screenX })
                 }}
                 onMouseMove={(e) => {
                     this.swipeMove(e);
@@ -96,6 +103,10 @@ export default class Media extends Component {
                             children[0].style.height = '100%';
                             children[0].style.width = 'unset';
                             children[0].style.maxWidth = '100%';
+                        } else {
+                            children[0].style.height = 'unset';
+                            children[0].style.maxHeight = '100%';
+                            children[0].style.width = '100%';
                         }
 
                         children[1].style.width = `${children[0].clientWidth}px`;
