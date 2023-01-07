@@ -62,7 +62,6 @@ export default class Media extends Component {
     swipeMove(e) {
         const { id, active, swipe } = this.props, { x } = this.state;
         if (id === active && x >= 0) {
-            console.log(e.touches[0].pageX, x)
             swipe(e.touches && e.touches.length > 0 ? e.touches[0].pageX - x : e.pageX - x);
         }
     }
