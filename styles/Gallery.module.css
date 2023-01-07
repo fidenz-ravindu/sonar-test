@@ -1,0 +1,64 @@
+.mediaContainer {
+  height: 90%;
+  width: 80%;
+  max-width: 600px;
+  padding: 5px;
+  overflow-x: visible;
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  width: max-content;
+  height: 100%;
+  display: inline-flex;
+  transition: 0.2s ease all;
+}
+
+.media {
+  opacity: 0;
+}
+
+.mediaContent {
+  height: 100%;
+}
+
+.metaData {
+  z-index: 2000;
+}
+
+.mediaData {
+  width: 100%;
+  padding: 8px;
+  bottom: 0;
+  background-color: var(--glass-blue);
+  backdrop-filter: blur(2px);
+}
+
+.caption {
+  font-size: 0.95rem;
+  padding: 5px;
+}
+
+.mediaContentContainer {
+  width: fit-content;
+  height: fit-content;
+  height: 100%;
+  position: relative;
+}
+
+@media screen and (max-width: 900px) {
+  .media {
+    width: 80%;
+  }
+
+  .mediaContentContainer {
+    max-width: 90vw;
+  }
+
+  .mediaContent {
+    width: 100%;
+    height: fit-content;
+    max-height: 100%;
+  }
+}
