@@ -2,6 +2,7 @@ import { Component } from "react";
 import Styles from "../../styles/Gallery.module.css";
 import ComponentStyles from "../../styles/Component.module.css";
 import { Cabin, Catamaran, Hubbali, MaterialIcons, Montserrat, Nunito, Oxygen, Raleway, Roboto, Rubik } from "../font";
+import { months } from "../util";
 
 export default class Media extends Component {
     constructor(props) {
@@ -11,21 +12,6 @@ export default class Media extends Component {
             x: -1,
             shouldFocus: true
         }
-
-        this.months = [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December",
-        ];
 
         this.swipeEnd = this.swipeEnd.bind(this);
     }
@@ -111,7 +97,7 @@ export default class Media extends Component {
                             <div className={[Styles.caption, Roboto.className].join(" ")}>{post.caption}</div>
                             <div className={[ComponentStyles.center, Nunito.className].join(" ")} style={{ width: "fit-content", fontSize: "0.8rem" }}><span className={MaterialIcons.className}>location_on</span>{post.location}</div>
                         </div>
-                        <div className={[ComponentStyles.absolute, Cabin.className].join(" ")} style={{ top: "5px", right: "5px", color: "wheat", fontSize: "0.7rem" }}>{`${posted.getFullYear()} ${this.months[posted.getMonth()]} ${posted.getDate()}`}</div>
+                        <div className={[ComponentStyles.absolute, Cabin.className].join(" ")} style={{ top: "5px", right: "5px", color: "wheat", fontSize: "0.7rem" }}>{`${posted.getFullYear()} ${months[posted.getMonth()]} ${posted.getDate()}`}</div>
                     </div>
                 </div>
             </div>

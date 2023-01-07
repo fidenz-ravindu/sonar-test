@@ -14,6 +14,7 @@ import {
   SourceSansPro,
 } from "../font";
 import Image from "next/image";
+import { months } from "../util";
 
 export default function Details(props) {
   const { value, data, ...rest } = props;
@@ -26,25 +27,6 @@ export default function Details(props) {
 }
 
 class DetailsComponent extends Component {
-  constructor(props) {
-    super(props);
-
-    this.months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-  }
-
   render() {
     const { details } = this.props;
     return (
@@ -115,7 +97,7 @@ class DetailsComponent extends Component {
                               Styles.content,
                             ].join(" ")}
                           >
-                            {this.months[date.getMonth()]}
+                            {months[date.getMonth()]}
                           </div>
                           <div
                             className={[

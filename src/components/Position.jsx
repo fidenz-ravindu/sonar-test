@@ -11,6 +11,7 @@ import {
   Nunito,
   SourceSansPro,
 } from "../font";
+import { months_shortened } from "../util";
 
 export default class Position extends Component {
   constructor(props) {
@@ -19,21 +20,6 @@ export default class Position extends Component {
     this.state = {
       expanded: false,
     };
-
-    this.months = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "June",
-      "July",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ];
   }
 
   render() {
@@ -45,9 +31,11 @@ export default class Position extends Component {
     if (end.getTime() < started.getTime()) {
       end = "Present";
     } else {
-      end = `${this.months[end.getMonth()]} ${end.getFullYear()}`;
+      end = `${months_shortened[end.getMonth()]} ${end.getFullYear()}`;
     }
-    started = `${this.months[started.getMonth()]} ${started.getFullYear()}`;
+    started = `${
+      months_shortened[started.getMonth()]
+    } ${started.getFullYear()}`;
 
     return (
       <>

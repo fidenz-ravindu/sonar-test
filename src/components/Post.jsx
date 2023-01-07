@@ -11,27 +11,9 @@ import {
   Poppins,
   SourceSansPro,
 } from "../font";
+import { months_shortened } from "../util";
 
 export default class Post extends Component {
-  constructor(props) {
-    super(props);
-
-    this.months = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "June",
-      "July",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ];
-  }
-
   render() {
     const { type, style } = this.props;
     switch (type) {
@@ -103,7 +85,7 @@ export default class Post extends Component {
           now.setHours(0, 0, 0, 0);
           if (now.getTime() > posted.getTime()) time = "Yesterday";
         } else if (now.getFullYear() === posted.getFullYear()) {
-          time = `${this.months[posted.getMonth()]} ${posted.getDate()}`;
+          time = `${months_shortened[posted.getMonth()]} ${posted.getDate()}`;
         } else {
           time = `${posted.getFullYear()} ${this.months[posted.getMonth()]}`;
         }
