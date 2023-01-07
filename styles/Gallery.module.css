@@ -58,7 +58,7 @@
 
   .mediaContent {
     width: 100%;
-    height: fit-content;
+    height: unset;
     max-height: 100%;
   }
 }

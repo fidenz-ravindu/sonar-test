@@ -99,15 +99,6 @@ export default class Media extends Component {
                     const containers = e.target.parentNode.parentNode.parentNode.children;
                     for (let i = 0; i < containers.length; i++) {
                         const children = containers[i].children[0].children;
-                        if (children[0].clientWidth < children[0].clientHeight) {
-                            children[0].style.height = '100%';
-                            children[0].style.width = 'unset';
-                            children[0].style.maxWidth = '100%';
-                        } else {
-                            children[0].style.height = 'unset';
-                            children[0].style.maxHeight = '100%';
-                            children[0].style.width = '100%';
-                        }
 
                         children[1].style.width = `${children[0].clientWidth}px`;
                         children[1].style.height = `${children[0].clientHeight}px`;
