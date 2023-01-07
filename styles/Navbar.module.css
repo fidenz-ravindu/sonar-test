@@ -131,16 +131,15 @@
 }
 
 .contact {
-  border-radius: 8px;
-  border: 2px solid var(--v-dr);
-  background-color: var(--v-dr);
-  color: wheat;
+  font-size: 0.9rem;
+  padding: 6px 10px;
+  border-radius: 2px;
+  background: linear-gradient(to bottom right, red, var(--v-dr));
+  color: whitesmoke;
 }
 
 .contact:hover {
-  box-shadow: 0 0 4px black;
-  background-color: transparent;
-  color: red;
+  box-shadow: -3px 3px 8px white;
 }
 
 @keyframes background-animation {
@@ -200,5 +199,9 @@
 
   .titleDesign::before {
     display: none;
+  }
+
+  .contact:hover {
+    box-shadow: none;
   }
 }
