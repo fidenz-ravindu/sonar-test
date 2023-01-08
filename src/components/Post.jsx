@@ -11,7 +11,7 @@ import {
   Poppins,
   SourceSansPro,
 } from "../font";
-import { months_shortened } from "../util";
+import { months, months_shortened } from "../util";
 
 export default class Post extends Component {
   render() {
@@ -87,7 +87,7 @@ export default class Post extends Component {
         } else if (now.getFullYear() === posted.getFullYear()) {
           time = `${months_shortened[posted.getMonth()]} ${posted.getDate()}`;
         } else {
-          time = `${posted.getFullYear()} ${this.months[posted.getMonth()]}`;
+          time = `${posted.getFullYear()} ${months[posted.getMonth()]}`;
         }
 
         return (
