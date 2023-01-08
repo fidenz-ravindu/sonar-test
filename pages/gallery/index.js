@@ -27,7 +27,7 @@ class GalleryComponent extends Component {
     this.state = {
       active: 0,
       left: 0,
-      offset: 0
+      offset: 0,
     };
 
     this.setActiveMedia = this.setActiveMedia.bind(this);
@@ -65,26 +65,28 @@ class GalleryComponent extends Component {
     this.setState({ active: key });
 
     if (e) {
-      console.log(e.parentNode)
       this.scrollTo(e.parentNode.children[key]);
     }
   }
 
   scrollTo(e) {
     if (e)
-      this.scroll(-e.offsetLeft + (this.mediaContainer.current.clientWidth - e.clientWidth) / 2);
+      this.scroll(
+        -e.offsetLeft +
+          (this.mediaContainer.current.clientWidth - e.clientWidth) / 2
+      );
   }
 
   scroll(len) {
     this.setState({
-      left: len
-    })
+      left: len,
+    });
   }
 
   swipe(diff) {
     this.setState({
-      offset: diff
-    })
+      offset: diff,
+    });
   }
 
   render() {
@@ -115,7 +117,10 @@ class GalleryComponent extends Component {
           )}
           {media.length > 0 && (
             <div ref={this.mediaContainer} className={Styles.mediaContainer}>
-              <div className={Styles.content} style={{ left: `${left + offset}px` }} >
+              <div
+                className={Styles.content}
+                style={{ left: `${left + offset}px` }}
+              >
                 {media.map((elm) => (
                   <Media
                     rearrange={elm.key === 0}
