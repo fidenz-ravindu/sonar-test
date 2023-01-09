@@ -52,7 +52,7 @@ class FeedComponent extends Component {
           <title>Portfolio - Feed</title>
         </Head>
 
-        <main
+        <section
           style={{ maxHeight: "100vh", overflow: "auto" }}
           onScroll={(e) => {
             if (
@@ -106,7 +106,7 @@ class FeedComponent extends Component {
               No results found.
             </div>
           )}
-        </main>
+        </section>
       </>
     );
   }

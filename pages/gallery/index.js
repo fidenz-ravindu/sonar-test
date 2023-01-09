@@ -99,7 +99,7 @@ class GalleryComponent extends Component {
           <title>Portfolio - Gallery</title>
         </Head>
 
-        <main
+        <section
           className={[
             ComponentStyles.center,
             ComponentStyles.page,
@@ -148,7 +148,7 @@ class GalleryComponent extends Component {
               </div>
             </>
           )}
-        </main>
+        </section>
       </>
     );
   }
