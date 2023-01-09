@@ -6,7 +6,7 @@ const slice = createSlice({
     details: [],
     projects: [],
     people: [],
-    archivements: [],
+    archievements: [],
     posts: {},
     gallery: [],
     work: [],
