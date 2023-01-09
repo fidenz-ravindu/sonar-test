@@ -3,7 +3,7 @@ import { Component } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { get_posts } from "../../src/api/request";
 import Post from "../../src/components/Post";
-import { Atma } from "../../src/font";
+import { Atma, Roboto } from "../../src/font";
 import { set, setPosts } from "../../src/store";
 
 import ComponentStyles from "../../styles/Component.module.css";
@@ -62,6 +62,15 @@ class FeedComponent extends Component {
               this.getPosts();
           }}
         >
+          <div
+            className={[
+              ComponentStyles.row,
+              ComponentStyles.center,
+              Roboto.className,
+            ].join(" ")}
+          >
+            <div className={ComponentStyles.pageTitle}>Feed</div>
+          </div>
           {waiting && (!posts[1] || posts[1].length == 0) && (
             <>
               <Post type={1} style={{ animationDelay: "0.2s" }} />

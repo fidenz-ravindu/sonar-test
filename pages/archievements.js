@@ -49,6 +49,9 @@ class ArchievementsComponent extends Component {
                 </Head>
 
                 <section className={ComponentStyles.page}>
+                    <div className={[ComponentStyles.row, ComponentStyles.center, Roboto.className].join(" ")}>
+                        <div className={ComponentStyles.pageTitle}>Archievements</div>
+                    </div>
                     <div className={Styles.container}>
                         {isWaiting && archievements.length === 0 && <>
                             <Archievement archievement={{}} style={{ opacity: '1' }} />

@@ -3,7 +3,7 @@ import { Component } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { get_projects } from "../../src/api/request";
 import Project from "../../src/components/Project";
-import { Atma } from "../../src/font";
+import { Atma, Roboto } from "../../src/font";
 import { set } from "../../src/store";
 
 import ComponentStyles from "../../styles/Component.module.css";
@@ -68,6 +68,15 @@ class ProjectsComponent extends Component {
             ComponentStyles.column,
           ].join(" ")}
         >
+          <div
+            className={[
+              ComponentStyles.row,
+              ComponentStyles.center,
+              Roboto.className,
+            ].join(" ")}
+          >
+            <div className={ComponentStyles.pageTitle}>Projects</div>
+          </div>
           {isWaiting && projects.length === 0 ? (
             <div
               className={[

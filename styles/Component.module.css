@@ -8,6 +8,17 @@
   overflow-x: hidden;
 }
 
+.pageTitle {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 14px;
+  font-size: 1.4rem;
+  color: black;
+  padding: 5px 14px;
+  background-color: wheat;
+  margin: 18px 0;
+}
+
 .relative {
   position: relative;
 }
