@@ -11,12 +11,12 @@
 .pageTitle {
   width: fit-content;
   height: fit-content;
-  border-radius: 14px;
   font-size: 1.4rem;
-  color: black;
+  color: whitesmoke;
   padding: 5px 14px;
-  background-color: wheat;
   margin: 18px 0;
+  border: solid wheat;
+  border-width: 0 0 3px 0;
 }
 
 .relative {

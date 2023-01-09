@@ -71,6 +71,7 @@ class ProjectsComponent extends Component {
           <div
             className={[
               ComponentStyles.row,
+              ComponentStyles.fadeInBottom,
               ComponentStyles.center,
               Roboto.className,
             ].join(" ")}
