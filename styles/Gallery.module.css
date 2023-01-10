@@ -29,7 +29,7 @@
 }
 
 .loading .mediaContentContainer {
-  opacity: 0;
+  display: none;
 }
 
 .mediaContent {

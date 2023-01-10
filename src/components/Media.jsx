@@ -30,7 +30,7 @@ export default class Media extends Component {
 
   swipeEnd(e) {
     const { x } = this.state,
-      { scrollLen, setActive, swipe, id, len, scroll } = this.props;
+      { setActive, swipe, id, len } = this.props;
 
     if (e.touches && e.touches.length > 0) {
       e.pageX = e.touches[0].pageX;
@@ -40,13 +40,18 @@ export default class Media extends Component {
 
     if (x > 0) {
       if (x === e.pageX) {
-        setActive(id, e.target.parentNode.parentNode);
+        if (e.target.classList.contains(Styles.loading))
+          setActive(id, e.target);
+        else setActive(id, e.target.parentNode.parentNode);
       } else if (Math.abs(x - e.pageX) >= e.target.clientWidth / 2) {
         if (id < len - 1 && x > e.pageX) {
-          setActive(id + 1, e.target.parentNode.parentNode);
+          if (e.target.classList.contains(Styles.loading))
+            setActive(id + 1, e.target);
+          else setActive(id + 1, e.target.parentNode.parentNode);
         } else if (id > 0 && x < e.pageX) {
-          // scroll(e.target.parentNode.parentNode.parentNode.children[id - 1]);
-          setActive(id - 1, e.target.parentNode.parentNode);
+          if (e.target.classList.contains(Styles.loading))
+            setActive(id - 1, e.target);
+          else setActive(id - 1, e.target.parentNode.parentNode);
         }
       }
       this.setState({ x: -1 });
@@ -77,7 +82,7 @@ export default class Media extends Component {
           scroll(e.target.parentNode.parentNode.parentNode.children[0]);
         }}
         onMouseDown={(e) => {
-          this.setState({ x: e.screenX });
+          this.setState({ x: e.pageX });
         }}
         onTouchStart={(e) => {
           this.setState({ x: e.touches[0].pageX });

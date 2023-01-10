@@ -62,7 +62,7 @@ class GalleryComponent extends Component {
   }
 
   setActiveMedia(key, e) {
-    this.setState({ active: key });
+    this.setState({ active: key, offset: 0 });
 
     if (e) {
       this.scrollTo(e.parentNode.children[key]);
