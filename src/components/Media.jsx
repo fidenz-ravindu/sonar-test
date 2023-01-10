@@ -1,5 +1,6 @@
 import { Component } from "react";
 import Styles from "../../styles/Gallery.module.css";
+import ProjectStyles from "../../styles/Project.module.css";
 import ComponentStyles from "../../styles/Component.module.css";
 import {
   Cabin,
@@ -95,6 +96,8 @@ export default class Media extends Component {
           Styles.media,
           ComponentStyles.center,
           ComponentStyles.relative,
+          Styles.loading,
+          ProjectStyles.loading,
           className,
         ].join(" ")}
         style={{
@@ -109,6 +112,11 @@ export default class Media extends Component {
             ComponentStyles.center,
           ].join(" ")}
           onLoad={(e) => {
+            e.target.parentNode.parentNode.classList.remove(
+              ProjectStyles.loading,
+              Styles.loading
+            );
+
             const containers =
               e.target.parentNode.parentNode.parentNode.children;
             for (let i = 0; i < containers.length; i++) {
@@ -124,40 +132,48 @@ export default class Media extends Component {
           {post.type === "Image" && (
             <img
               draggable={false}
-              className={Styles.mediaContent}
+              className={[Styles.mediaContent].join(" ")}
               src={post.link}
               alt="Image of post"
             />
           )}
-          <div
-            className={[Styles.metaData, ComponentStyles.absolute].join(" ")}
-          >
+          {post.type && (
             <div
-              className={[Styles.mediaData, ComponentStyles.absolute].join(" ")}
+              className={[Styles.metaData, ComponentStyles.absolute].join(" ")}
             >
-              <div className={[Styles.caption, Roboto.className].join(" ")}>
-                {post.caption}
+              <div
+                className={[Styles.mediaData, ComponentStyles.absolute].join(
+                  " "
+                )}
+              >
+                <div className={[Styles.caption, Roboto.className].join(" ")}>
+                  {post.caption}
+                </div>
+                <div
+                  className={[ComponentStyles.center, Nunito.className].join(
+                    " "
+                  )}
+                  style={{ width: "fit-content", fontSize: "0.8rem" }}
+                >
+                  <span className={MaterialIcons.className}>location_on</span>
+                  {post.location}
+                </div>
               </div>
               <div
-                className={[ComponentStyles.center, Nunito.className].join(" ")}
-                style={{ width: "fit-content", fontSize: "0.8rem" }}
-              >
-                <span className={MaterialIcons.className}>location_on</span>
-                {post.location}
-              </div>
+                className={[ComponentStyles.absolute, Cabin.className].join(
+                  " "
+                )}
+                style={{
+                  top: "5px",
+                  right: "5px",
+                  color: "wheat",
+                  fontSize: "0.7rem",
+                }}
+              >{`${posted.getFullYear()} ${
+                months[posted.getMonth()]
+              } ${posted.getDate()}`}</div>
             </div>
-            <div
-              className={[ComponentStyles.absolute, Cabin.className].join(" ")}
-              style={{
-                top: "5px",
-                right: "5px",
-                color: "wheat",
-                fontSize: "0.7rem",
-              }}
-            >{`${posted.getFullYear()} ${
-              months[posted.getMonth()]
-            } ${posted.getDate()}`}</div>
-          </div>
+          )}
         </div>
       </div>
     );
