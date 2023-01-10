@@ -41,13 +41,17 @@ export default class Position extends Component {
       <>
         <div
           className={[ComponentStyles.fadeIn, Styles.container].join(" ")}
-          style={{ color: "white", ...style }}
+          style={{
+            color: "white",
+            gridRow: "auto",
+            ...style,
+          }}
         >
           <div
             className={[ComponentStyles.row, ComponentStyles.center].join(" ")}
           >
             <div className={[Styles.logoContainer].join(" ")}>
-              <img className={Styles.logo} src={work.logo} atl="logo" />
+              <img className={Styles.logo} src={work.logo} alt="logo" />
             </div>
             <div className={[ComponentStyles.row].join(" ")}>
               <div
@@ -75,7 +79,15 @@ export default class Position extends Component {
                 Styles.expandMore,
                 expanded ? Styles.expanded : "",
               ].join(" ")}
-              onClick={() => {
+              onClick={(e) => {
+                if (expanded) {
+                  setTimeout(() => {
+                    e.target.parentNode.parentNode.style.gridRow = "auto";
+                  }, 300);
+                } else {
+                  e.target.parentNode.parentNode.style.gridRow =
+                    "span 2 / auto";
+                }
                 this.setState({ expanded: !expanded });
               }}
             >
