@@ -7,7 +7,7 @@ export default async function handler(req, res) {
 
     const { name, email, subject, message } = req.body;
     let doc = new MessageModel({
-      _id: new Date().toLocaleString() + email,
+      _id: new Date().getTime(),
       name,
       email,
       subject,
