@@ -130,16 +130,18 @@
   top: -5px;
   background-color: currentColor;
   transform: rotateZ(45deg);
-  z-index: 29;
 }
 
 .hoverPopUp,
 .hoverPopUp::before {
+  z-index: -1;
   opacity: 0;
+  transition: all 0.3s ease;
 }
 
 .hoverPopUpAnchor:hover .hoverPopUp,
 .hoverPopUpAnchor:hover .hoverPopUp::before {
+  z-index: 30;
   opacity: 1;
 }
 

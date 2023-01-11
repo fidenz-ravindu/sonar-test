@@ -5,11 +5,14 @@ import { store } from "../store";
 import ComponentStyles from "../../styles/Component.module.css";
 import Styles from "../../styles/Details.module.css";
 import {
+  AltonaSans,
   Atma,
   DancingScript,
   Lato,
   Lora,
   MaterialIcons,
+  Nunito,
+  OpenSans,
   Sarabun,
   SourceSansPro,
 } from "../font";
@@ -185,8 +188,10 @@ class DetailsComponent extends Component {
                                     {element.icon}
                                   </span>
                                   <span
-                                    className={Lato.className}
-                                    style={{ margin: "5px" }}
+                                    className={[
+                                      Lato.className,
+                                      Styles.skill,
+                                    ].join(" ")}
                                   >
                                     {element.content}
                                   </span>
@@ -242,12 +247,12 @@ class DetailsComponent extends Component {
                                       ComponentStyles.hoverPopUp,
                                     ].join(" ")}
                                     style={{
-                                      backgroundColor: "wheat",
-                                      color: "wheat",
+                                      backgroundColor: "white",
+                                      color: "white",
                                     }}
                                   >
                                     <span
-                                      className={Sarabun.className}
+                                      className={AltonaSans.className}
                                       style={{
                                         color: "black",
                                         width: "fit-content",
@@ -298,7 +303,6 @@ class DetailsComponent extends Component {
                               >
                                 <div
                                   className={[
-                                    Lora.className,
                                     Styles.category,
                                     Atma.className,
                                   ].join(" ")}
@@ -335,25 +339,19 @@ class DetailsComponent extends Component {
                                           className={[
                                             Styles.name,
                                             ComponentStyles.center,
+                                            OpenSans.className,
                                           ].join(" ")}
+                                          style={
+                                            !skill.status
+                                              ? {
+                                                  borderBottom:
+                                                    "2px solid var(--v-dr)",
+                                                }
+                                              : {}
+                                          }
                                         >
-                                          {skill.name}{" "}
+                                          {skill.name}
                                         </div>
-                                        {!skill.status && (
-                                          <span
-                                            className={MaterialIcons.className}
-                                            style={{
-                                              margin: "3px",
-                                              fontSize: "1.1rem",
-                                              color: "yellow",
-                                              position: "absolute",
-                                              top: "0",
-                                              left: "0",
-                                            }}
-                                          >
-                                            report
-                                          </span>
-                                        )}
                                       </div>
                                     );
                                   })}

@@ -18,7 +18,7 @@
   width: fit-content;
   font-size: 0.9rem;
   margin: 5px;
-  padding: 10px 15px;
+  padding: 6px 15px;
   border-radius: 4px;
   background-color: black;
   box-shadow: 0 0 2px wheat;
@@ -45,7 +45,7 @@
   column-gap: 15px;
   padding: 15px;
   margin: 5px 0;
-  grid-template-columns: repeat(auto-fill, minmax(110px, max-content));
+  grid-template-columns: repeat(auto-fill, minmax(100px, max-content));
 }
 
 .objectContainer {
@@ -65,36 +65,40 @@
 
 .elementIcon {
   font-size: 1.6rem;
-  margin: 0 5px;
+  margin-left: 8px;
   width: fit-content;
   height: fit-content;
   filter: drop-shadow(0 0 6px black);
 }
+.skill {
+  margin: 0 8px;
+}
 
 .link {
-  padding: 10px;
+  padding: 9px;
   height: 45px;
   width: 45px;
-  border-radius: 50%;
-  box-shadow: 0 0 3px grey;
+  border-bottom: 2px solid white;
 }
 
 .linkLogo {
   width: 100%;
   filter: grayscale(1);
-}
-
-.link:hover {
-  box-shadow: 0 0 6px white;
+  transition: all 1s ease;
 }
 
 .link:hover .linkLogo {
   filter: grayscale(0);
+  transform: translateY(-5px);
 }
 
 @media screen and (max-width: 600px) {
   .linkLogo {
     filter: grayscale(0);
+    transform: none;
+  }
+  .link:hover .linkLogo {
+    transform: none;
   }
 }
 
@@ -110,6 +114,21 @@
 
 .iconContainer .icon {
   height: 100%;
+}
+
+.status {
+  margin: 3px;
+  font-size: 1.1rem;
+  color: var(--v-dr);
+  position: absolute;
+  filter: brightness(1.6);
+  top: 0;
+  opacity: 0.6;
+  transform: translateX(-36px);
+}
+
+.name {
+  padding: 2px 12px;
 }
 
 @media screen and (max-width: 480px) {

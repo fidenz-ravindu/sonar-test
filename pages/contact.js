@@ -263,9 +263,9 @@ class ContactMeComponent extends Component {
                 }}
               >
                 {output == 1 ? <>
-                  <span className={MaterialIcons.className} style={{ marginRight: "5px", height: "100%" }}>done</span> Sent
+                  <span className={MaterialIcons.className} style={{ marginRight: "5px", height: "100%", fontSize: "1rem" }}>done</span> Sent
                 </> : output === 2 ? <>
-                  <span className={MaterialIcons.className} style={{ marginRight: "5px", height: "100%" }}>error</span> Error
+                  <span className={MaterialIcons.className} style={{ marginRight: "5px", height: "100%", fontSize: "1rem" }}>error</span> Error
                 </> : ""}
               </span>
               <button disabled={isWaiting} className={Styles.btn} type="submit">
