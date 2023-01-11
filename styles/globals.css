@@ -82,6 +82,8 @@ ul {
   --v-dv: rgb(170, 5, 143);
   --v-dr: rgb(141, 13, 13);
   --v-dg: rgb(0, 180, 45);
+  --shine-blue: rgb(50, 237, 243);
+  --shine-mag: rgb(160, 17, 117);
   --glass-blue: rgba(116, 188, 255, 0.4);
   --navbar-height: 70px;
 }

@@ -16,6 +16,12 @@ import {
   Roboto,
   Rubik,
   SourceSansPro,
+  Atma,
+  Catamaran,
+  Sarabun,
+  Raleway,
+  DancingScript,
+  Pacifico,
 } from "../font";
 import Link from "next/link";
 
@@ -73,14 +79,14 @@ class NavbarComponent extends Component {
             ComponentStyles.row,
             Styles.navbar,
             ComponentStyles.center,
-            ComponentStyles.spaceBet,
+            ComponentStyles.justifyStart,
           ].join(" ")}
         >
           <div
             className={[
               ComponentStyles.relative,
               Styles.title,
-              Rubik.className,
+              Pacifico.className,
             ].join(" ")}
             style={{ width: "fit-content", fontSize: "1.75rem" }}
           >
@@ -143,7 +149,7 @@ class NavbarComponent extends Component {
             </NavLink>
           </div>
 
-          <div>
+          <div className={Styles.controlContainer}>
             <Link
               href={"/contact"}
               className={[

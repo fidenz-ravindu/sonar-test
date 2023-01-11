@@ -4,8 +4,9 @@
   z-index: 100;
   height: var(--navbar-height);
   padding: 15px;
-  box-shadow: 0 0 1px lightcyan;
   backdrop-filter: blur(8px);
+  justify-content: unset;
+  border-bottom: 1px groove white;
 }
 
 .navbarController {
@@ -25,7 +26,7 @@
 .controllerModifier {
   width: 85%;
   height: 4px;
-  background-color: wheat;
+  background-color: white;
 }
 
 .navbarController.active {
@@ -44,6 +45,10 @@
 }
 .navbarController.active .controllerModifier:last-child {
   transform: rotateZ(-45deg);
+}
+
+.navLinkContainer {
+  margin-left: 16px;
 }
 
 .navLink {
@@ -69,9 +74,9 @@
   overflow: hidden;
   display: block;
   height: fit-content;
-  color: black;
+  color: whitesmoke;
   border-radius: 3px;
-  background-color: wheat;
+  background-color: var(--content-border);
   transition: all 0.5s ease-in-out;
 }
 
@@ -86,13 +91,12 @@
 }
 
 .linkModifier {
-  height: 10px;
-  width: 10px;
+  height: 3px;
+  width: 100%;
   position: absolute;
   scale: 0;
-  border-radius: 50%;
-  background-color: wheat;
-  bottom: -4px;
+  background-color: var(--content-border);
+  bottom: -3px;
 }
 
 .link.active ~ .linkModifier {
@@ -100,57 +104,32 @@
 }
 
 .titleDesign {
-  font-weight: 600;
-  color: transparent;
-  background-image: linear-gradient(
-    to top right,
-    rgb(136, 15, 75),
-    rgb(22, 230, 219),
-    rgb(237, 240, 64)
+  margin-right: 15px;
+  background: linear-gradient(
+    30deg,
+    var(--shine-blue),
+    var(--shine-mag),
+    white
   );
   background-clip: text;
-  background-size: 200% 200%;
-  animation: 3s background-animation ease-in-out infinite;
+  width: fit-content;
+  color: transparent;
 }
 
-.titleDesign::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  display: block;
-  background-image: linear-gradient(
-    to top right,
-    rgb(136, 15, 75),
-    rgb(22, 230, 219),
-    rgb(237, 240, 64)
-  );
-  filter: blur(40px);
-  background-size: 200% 200%;
-  animation: 3s background-animation ease-in-out infinite reverse;
+.controlContainer {
+  margin-left: auto;
 }
 
 .contact {
   font-size: 0.9rem;
   padding: 6px 10px;
   border-radius: 2px;
-  background: linear-gradient(to bottom right, red, var(--v-dr));
+  background: var(--content-border);
   color: whitesmoke;
 }
 
 .contact:hover {
   box-shadow: -3px 3px 8px white;
-}
-
-@keyframes background-animation {
-  0%,
-  100% {
-    background-position: 0 100%;
-  }
-
-  50% {
-    background-position: 100% 0;
-  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -161,6 +140,7 @@
     height: 100vh;
     width: 350px;
     flex-direction: column !important;
+    justify-content: space-between;
     padding: 80px 5px;
     transform: translateX(-100%);
   }
@@ -188,6 +168,12 @@
   .link.active ~ .linkHover {
     max-width: 100%;
     opacity: 1;
+  }
+  .controlContainer {
+    margin: 0;
+  }
+  .contact:hover {
+    box-shadow: none;
   }
 }
 

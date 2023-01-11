@@ -44,6 +44,9 @@ export const OpenSans = LocalFont({
   src: "./fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf",
 });
 export const Oxygen = LocalFont({ src: "./fonts/Oxygen/Oxygen-Regular.ttf" });
+export const Pacifico = LocalFont({
+  src: "./fonts/Pacifico/Pacifico-Regular.ttf",
+});
 export const Poppins = LocalFont({
   src: "./fonts/Poppins/Poppins-Regular.ttf",
 });
