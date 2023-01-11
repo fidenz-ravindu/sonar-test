@@ -1,7 +1,17 @@
 .messageForm {
   padding: 15px;
   margin: 20px;
-  background-color: black;
+  background-color: var(--dark);
+}
+
+.formTitle {
+  align-self: baseline;
+  width: fit-content;
+  color: white;
+  border-bottom: 2px solid var(--content-border);
+  font-size: 1.2rem;
+  padding: 0 10px 5px 10px;
+  margin: 6px 0 6px 30px;
 }
 
 @media screen and (max-width: 600px) {
@@ -13,9 +23,10 @@
 .btn {
   padding: 8px 15px;
   color: white;
-  background-color: var(--v-dr);
+  background-color: var(--content-border);
   float: right;
   margin: 0 15px;
+  border-radius: 3px;
 }
 
 .btn:disabled {
@@ -23,9 +34,14 @@
 }
 
 .btn:hover {
-  box-shadow: 0 0 3px red;
+  box-shadow: -3px 3px 6px white;
+  transform: translateX(5px);
 }
 
 .status {
-  font-size: 1.1rem;
+  display: inline-flex;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  border-radius: 3px;
+  color: white;
 }

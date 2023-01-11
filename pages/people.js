@@ -10,13 +10,14 @@ import ComponentStyles from "../styles/Component.module.css";
 import Styles from "../styles/People.module.css";
 
 export default function People(props) {
-  return <PeopleComponent
-    isWaiting={useSelector(state => state.waiting)}
-    people={useSelector(state => state.people)}
-    dispatch={useDispatch()}
-  />
+  return (
+    <PeopleComponent
+      isWaiting={useSelector((state) => state.waiting)}
+      people={useSelector((state) => state.people)}
+      dispatch={useDispatch()}
+    />
+  );
 }
-
 
 class PeopleComponent extends Component {
   async getPeople() {
@@ -25,13 +26,16 @@ class PeopleComponent extends Component {
     dispatch(set({ key: "waiting", value: true }));
     await get_people((res) => {
       let key = 0;
-      dispatch(set({
-        key: "people", value: res.people.map(elm => {
-          elm["key"] = key++;
-          return elm;
+      dispatch(
+        set({
+          key: "people",
+          value: res.people.map((elm) => {
+            elm["key"] = key++;
+            return elm;
+          }),
         })
-      }))
-    })
+      );
+    });
     dispatch(set({ key: "waiting", value: false }));
   }
 
@@ -60,21 +64,26 @@ class PeopleComponent extends Component {
             <div className={ComponentStyles.pageTitle}>People</div>
           </div>
           <div className={[Styles.container, ComponentStyles.row].join(" ")}>
-            {isWaiting && people.length === 0 ? <>
-              <Person person={{}} />
-              <Person person={{}} />
-              <Person person={{}} />
-              <Person person={{}} />
-              <Person person={{}} />
-              <Person person={{}} />
-              <Person person={{}} />
-              <Person person={{}} />
-              <Person person={{}} />
-              <Person person={{}} />
-            </> :
+            {isWaiting && people.length === 0 ? (
               <>
-                {people.map(elm => <Person key={elm.key} person={elm} style={{ animationDelay: `${0.2 * elm.key}s` }} />)}
-              </>}
+                <Person person={{}} />
+                <Person person={{}} />
+                <Person person={{}} />
+                <Person person={{}} />
+                <Person person={{}} />
+                <Person person={{}} />
+                <Person person={{}} />
+                <Person person={{}} />
+                <Person person={{}} />
+                <Person person={{}} />
+              </>
+            ) : (
+              <>
+                {people.map((elm) => (
+                  <Person key={elm.key} person={elm} />
+                ))}
+              </>
+            )}
           </div>
           {!isWaiting && people.length === 0 && (
             <>

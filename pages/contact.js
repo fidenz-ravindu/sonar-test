@@ -9,7 +9,7 @@ import { set } from "../src/store";
 import HomeStyles from "../styles/Home.module.css";
 import ComponentStyles from "../styles/Component.module.css";
 import Styles from "../styles/Contact.module.css";
-import { AltonaSans, Lato, MaterialIcons, Quicksand } from "../src/font";
+import { AltonaSans, Lato, MaterialIcons, OpenSans, Quicksand, Sarabun } from "../src/font";
 
 export default function ContactMe(props) {
   return (
@@ -101,16 +101,7 @@ class ContactMeComponent extends Component {
               Styles.messageForm,
             ].join(" ")}
           >
-            <div
-              className={Lato.className}
-              style={{
-                alignSelf: "baseline",
-                width: "fit-content",
-                color: "red",
-                fontSize: "1.2rem",
-                margin: "6px 0 6px 35px ",
-              }}
-            >
+            <div className={[Lato.className, Styles.formTitle].join(" ")}>
               Leave a message
             </div>
             <div
@@ -261,20 +252,21 @@ class ContactMeComponent extends Component {
               ].join(" ")}
             >
               <span
-                className={[MaterialIcons.className, Styles.status].join(" ")}
+                className={[Styles.status, OpenSans.className, ComponentStyles.center].join(" ")}
                 style={{
-                  padding: "5px",
-                  borderRadius: "50%",
-                  border: "1px solid",
-                  color:
+                  backgroundColor:
                     output == 1
                       ? "green"
                       : output === 2
-                      ? "red"
-                      : "transparent",
+                        ? "red"
+                        : "transparent",
                 }}
               >
-                {output == 1 ? "done" : output === 2 ? "error" : ""}
+                {output == 1 ? <>
+                  <span className={MaterialIcons.className} style={{ marginRight: "5px", height: "100%" }}>done</span> Sent
+                </> : output === 2 ? <>
+                  <span className={MaterialIcons.className} style={{ marginRight: "5px", height: "100%" }}>error</span> Error
+                </> : ""}
               </span>
               <button disabled={isWaiting} className={Styles.btn} type="submit">
                 Send

@@ -162,8 +162,8 @@
   z-index: 10;
   color: white;
   background-color: transparent;
-  border: 2px solid wheat;
-  border-radius: 3px;
+  border: 2px solid whitesmoke;
+  border-radius: 6px;
   width: 100%;
   height: max-content;
 }
@@ -179,15 +179,10 @@
 
 .dataInputName {
   position: absolute;
-  color: wheat;
   margin-left: 15px;
   z-index: 9;
-  background-color: black;
-}
-
-.dataInput:disabled ~ .dataInputName,
-.dataArea:disabled ~ .dataInputName {
-  background-color: transparent;
+  color: white;
+  background-color: var(--dark);
 }
 
 .dataArea:focus ~ .dataInputName,
