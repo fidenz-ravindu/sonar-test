@@ -1,20 +1,28 @@
-.navbar {
-  position: sticky;
+.navbar,
+.navbarControllerContainer {
   top: 0;
-  z-index: 100;
   height: var(--navbar-height);
   padding: 15px;
+  position: sticky;
   backdrop-filter: blur(8px);
   justify-content: unset;
   border-bottom: 1px groove white;
 }
 
+.navbar {
+  z-index: 100;
+}
+
+.navbarControllerContainer {
+  z-index: 101;
+  display: none;
+}
+
 .navbarController {
-  top: 15px;
-  left: 15px;
+  position: absolute;
+  margin: 0 15px;
   height: 30px;
   width: 42px;
-  position: fixed;
   z-index: 4000;
   justify-content: space-between;
   border-radius: 6px;
@@ -144,6 +152,9 @@
 }
 
 @media screen and (max-width: 1000px) {
+  .navbarControllerContainer {
+    display: flex;
+  }
   .navbar {
     position: fixed;
     left: 0;

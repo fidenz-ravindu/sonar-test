@@ -57,20 +57,22 @@ class NavbarComponent extends Component {
 
     return (
       <>
-        <div
-          className={[
-            Styles.navbarController,
-            ComponentStyles.center,
-            ComponentStyles.column,
-            isNavbarVisible ? " " + Styles.active : "",
-          ].join(" ")}
-          onClick={() => {
-            this.setState({ isNavbarVisible: !isNavbarVisible });
-          }}
-        >
-          <span className={Styles.controllerModifier}></span>
-          <span className={Styles.controllerModifier}></span>
-          <span className={Styles.controllerModifier}></span>
+        <div className={[Styles.navbarControllerContainer, ComponentStyles.relative, ComponentStyles.center].join(" ")}>
+          <div
+            className={[
+              Styles.navbarController,
+              ComponentStyles.center,
+              ComponentStyles.column,
+              isNavbarVisible ? " " + Styles.active : "",
+            ].join(" ")}
+            onClick={() => {
+              this.setState({ isNavbarVisible: !isNavbarVisible });
+            }}
+          >
+            <span className={Styles.controllerModifier}></span>
+            <span className={Styles.controllerModifier}></span>
+            <span className={Styles.controllerModifier}></span>
+          </div>
         </div>
         <section
           tabIndex={1}
