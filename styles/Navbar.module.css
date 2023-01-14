@@ -116,11 +116,11 @@
   color: transparent;
 }
 
-.controlContainer {
+.navButtonContainer {
   margin-left: auto;
 }
 
-.contact {
+.navButton {
   font-size: 0.9rem;
   padding: 6px 10px;
   border-radius: 2px;
@@ -128,7 +128,7 @@
   color: whitesmoke;
 }
 
-.contact:hover {
+.navButton:hover {
   box-shadow: -3px 3px 8px white;
 }
 
@@ -169,10 +169,10 @@
     max-width: 100%;
     opacity: 1;
   }
-  .controlContainer {
+  .navButtonContainer {
     margin: 0;
   }
-  .contact:hover {
+  .navButton:hover {
     box-shadow: none;
   }
 }
@@ -187,7 +187,7 @@
     display: none;
   }
 
-  .contact:hover {
+  .navButton:hover {
     box-shadow: none;
   }
 }

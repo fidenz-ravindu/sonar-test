@@ -149,12 +149,12 @@ class NavbarComponent extends Component {
             </NavLink>
           </div>
 
-          <div className={Styles.controlContainer}>
+          <div className={Styles.navButtonContainer}>
             <Link
               href={"/contact"}
               className={[
                 ComponentStyles.btn,
-                Styles.contact,
+                Styles.navButton,
                 Nunito.className,
               ].join(" ")}
             >
