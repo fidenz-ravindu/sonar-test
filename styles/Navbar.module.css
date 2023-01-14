@@ -20,7 +20,7 @@
 
 .navbarController {
   position: absolute;
-  margin: 0 15px;
+  margin: 0 10px;
   height: 30px;
   width: 42px;
   z-index: 4000;
