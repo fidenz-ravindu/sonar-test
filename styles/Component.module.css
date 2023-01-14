@@ -240,6 +240,11 @@
   background-color: var(--dark-highlight);
 }
 
+.dataInput[data-value=""]:disabled ~ .dataInputName,
+.dataArea[data-value=""]:disabled ~ .dataInputName {
+  background-color: transparent;
+}
+
 @media screen and (max-width: 450px) {
   .fadeInBottom {
     font-size: 0.7rem;
