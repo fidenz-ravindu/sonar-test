@@ -117,12 +117,14 @@
 }
 
 .navButtonContainer {
+  display: inline-flex;
   margin-left: auto;
 }
 
 .navButton {
   font-size: 0.9rem;
   padding: 6px 10px;
+  margin: 0 8px;
   border-radius: 2px;
   background: var(--content-border);
   color: whitesmoke;
@@ -130,6 +132,15 @@
 
 .navButton:hover {
   box-shadow: -3px 3px 8px white;
+}
+
+.navButton:active {
+  filter: brightness(0.7);
+  box-shadow: none;
+}
+
+.buttonSVG {
+  width: 20px;
 }
 
 @media screen and (max-width: 1000px) {
