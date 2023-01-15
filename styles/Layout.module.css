@@ -3,6 +3,8 @@
   top: 0;
   z-index: -1;
   background-color: var(--dark-highlight);
+  background-image: url("https://wallpapercave.com/wp/wp4708068.jpg");
+  background-size: contain;
 }
 
 .loadingIndicator {
