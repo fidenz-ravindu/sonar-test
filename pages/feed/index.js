@@ -49,6 +49,8 @@ class FeedComponent extends Component {
     return (
       <>
         <Head>
+          <meta name="title" content="Ravindu Denuwan | Feed"/> 
+          <meta name="description" content="If Ravindu feels like sharing something with you. he will post it here." />
           <title>Portfolio - Feed</title>
         </Head>
 

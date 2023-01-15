@@ -56,6 +56,11 @@ class ArchievementsComponent extends Component {
     return (
       <>
         <Head>
+          <meta name="title" content="Ravindu Denuwan | Archievements" />
+          <meta
+            name="description"
+            content="Find out what Ravindu has archieved for the past few years. Who knows you might be surprised of what you might find in here."
+          />
           <title>Portfolio - Archievements</title>
         </Head>
 

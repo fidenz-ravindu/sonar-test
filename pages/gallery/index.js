@@ -96,6 +96,8 @@ class GalleryComponent extends Component {
     return (
       <>
         <Head>
+          <meta name="title" content="Ravindu Denuwan | Gallery"/> 
+          <meta name="description" content="When Ravindu travels or hang out with his friends he does not forget to take a few pictures😂. Have a looksie." />
           <title>Portfolio - Gallery</title>
         </Head>
 

@@ -58,6 +58,11 @@ class ProjectsComponent extends Component {
     return (
       <>
         <Head>
+          <meta name="title" content="Ravindu Denuwan | Projects" />
+          <meta
+            name="description"
+            content="Would you like to know how Ravindu use his knowledge. Hope right in, let's go for a tour🤗."
+          />
           <title>Portfolio - Projects</title>
         </Head>
 

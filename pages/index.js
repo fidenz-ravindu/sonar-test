@@ -165,6 +165,8 @@ class HomeComponent extends Component {
     return (
       <>
         <Head>
+          <meta name="title" content="Ravindu Denuwan | Home"/> 
+          <meta name="description" content="Ravindu is a professional software developer with a creative mind and he is passionate about everything wrapped around technology😋✌🏻✌🏻." />
           <title>Portfolio</title>
         </Head>
 

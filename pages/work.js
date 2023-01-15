@@ -72,6 +72,8 @@ class WorkComponent extends Component {
     return (
       <>
         <Head>
+          <meta name="title" content="Ravindu Denuwan | Work"/> 
+          <meta name="description" content="Get to know fields Ravindu has been working on and how much experience he has." />
           <title>Portfolio - Work</title>
         </Head>
 

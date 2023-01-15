@@ -49,6 +49,8 @@ class PeopleComponent extends Component {
     return (
       <>
         <Head>
+        <meta name="title" content="Ravindu Denuwan | People"/> 
+          <meta name="description" content="Here's a list of people Ravindu has been hanging around with." />
           <title>Portfolio - People</title>
         </Head>
 
