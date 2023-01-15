@@ -34,3 +34,5 @@ yarn-error.log*
 .vercel
 
 .swc
+
+package-lock.json
