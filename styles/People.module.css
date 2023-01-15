@@ -58,7 +58,7 @@
 .pic:hover,
 .link:hover ~ .pic,
 .name:hover ~ .pic {
-  filter: blur(4px) opacity(0.4);
+  filter: blur(4px) grayscale(0.8);
 }
 
 .link:hover {
