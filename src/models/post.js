@@ -6,7 +6,7 @@ const PostSchema = new Schema({
   _id: String,
   tags: Array,
   title: String,
-  caption: String,
+  content: String,
   link: String,
   type: String,
   posted: Date,
