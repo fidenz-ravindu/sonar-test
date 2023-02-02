@@ -1,5 +1,5 @@
-import fs from "fs";
+import map from "../../public/sitemap.xml";
 
 export default async function handler(req, res) {
-  res.status(200).send(fs.readFileSync("public/sitemap.xml").toLocaleString());
+  res.status(200).send(map);
 }
