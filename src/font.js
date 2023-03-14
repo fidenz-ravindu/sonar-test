@@ -1,5 +1,6 @@
 import LocalFont from "@next/font/local";
 
+
 export const AltonaSans = LocalFont({
   src: "./fonts/altona_sans/AltonaSans-Regular.ttf",
 });
