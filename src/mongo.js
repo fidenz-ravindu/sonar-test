@@ -4,6 +4,7 @@ let connection = undefined;
 
 const getConnection = async () => {
   if (connection) return connection;
+  if (connection) return connection;
 
   if (!process.env.MONGODB_URL) throw "No datasource found.";
 
