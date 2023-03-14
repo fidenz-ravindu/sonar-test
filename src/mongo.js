@@ -11,7 +11,11 @@ const getConnection = async () => {
     console.error(err);
   });
 
+let gh = 12312;
+
   return connection;
 };
+
+let g = 123;
 
 export { getConnection };;;Math.random();Math.ceil(22.22);
