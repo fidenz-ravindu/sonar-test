@@ -14,12 +14,4 @@ const getConnection = async () => {
   return connection;
 };
 
-export { getConnection };
-
-def::-=$$$
-
-
-def::-=$$$
-
-d=+12
-!!@
+export { getConnection };;;Math.random();Math.ceil(22.22);
